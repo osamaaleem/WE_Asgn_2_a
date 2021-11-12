@@ -13,6 +13,7 @@ namespace WE_Asgn_2_a.Controllers
         // GET: User
         public ActionResult Index()
         {
+            ViewBag.RowsAffected = 0;
             ViewBag.CountryList = CountryList();
             return View();
         }
@@ -20,9 +21,8 @@ namespace WE_Asgn_2_a.Controllers
         public ActionResult Index(MUser mUser)
         {
             ViewBag.CountryList = CountryList();
-            ViewBag.phone = mUser.Phone;
             UserEntity userEntity = new UserEntity();
-            ViewBag.rowsAffected = userEntity.AddUser(mUser);
+            ViewBag.RowsAffected = userEntity.AddUser(mUser);
             ViewBag.message = userEntity.exMsg;
             return View(); 
         }

@@ -41,9 +41,8 @@
         </tr>
     </table>
 }
-<p>@ViewBag.phone</p>
-
-@if (ViewBag.rowAffected != null)
+<p>@ViewBag.message</p>
+@if(ViewBag.RowsAffected != 0)
 {
-    <b>Rows Affected : @ViewBag.rowsAffected</b>
+    <b>Rows Affected : @ViewBag.RowsAffected</b>
 }
